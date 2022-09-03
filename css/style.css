@@ -5,52 +5,67 @@ Light green: #7ed56f
 Medium green: #55c57a
 Dark green: #28b485
 
+only shorthand properties used are padding, margin and border, and animation which is also I want to avoid but is ok
+-----------------------------------------------------------------------------------------------------------------
 */
 
+
+
+
+
+/* base */
 * {
+	box-sizing: border-box;
 	margin: 0px;
 	padding: 0px;
-	box-sizing: border-box;
 }
 
 body {
 	color: #777;
 	font-family: 'Lato', sans-serif;
-	font-weight: 400;
 	font-size: 16px;
+	font-weight: 400;
 	line-height: 1.7;
 	padding: 30px;
 }
 
+
+/* Specific for tags */
 .header {
-	background-image: linear-gradient(to bottom right, #7ed56fcc, #55c57acc), url(../img/hero.jpg);
-	background-size: cover;
+	background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
 	background-position: top;
+	background-size: cover;
 	clip-path: polygon(0 0,100% 0,100% 75vh ,0 100%);
 	height: 95vh;
+	/* for .logo-box & .text-box*/
 	position: relative;
 }
 
+
 .logo-box{
+	left: 40px;
 	position: absolute;
 	top: 40px;
-	left: 40px;
 }
 
 .logo{
 	height: 35px;
 }
 
+
 .text-box{
-	position: absolute;
-	top: 40%;
 	left: 50%;
+	position: absolute;
+	text-align: center;
+	top: 40%;
 	transform: translate(-50%,-50%);
 }
+
 .heading-primary{
-	color: #fff;
-	text-transform: uppercase;
 	backface-visibility: hidden;
+	color: #fff;
+	margin-bottom: 60px;
+	text-transform: uppercase;
 }
 
 .heading-main{
@@ -70,6 +85,64 @@ body {
 	animation-name: moveInRight;
 	animation-duration: 1s;
 }
+
+/* These are specific for tags but exception for :link, :visited */
+.btn:link,
+.btn:visited{
+	/* this is just a trademark (haha), it my bdate*/
+	border-radius: 13032002px;
+	display: inline-block;
+	padding: 15px 40px;
+	position: relative;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: all .2s;
+	/*How we made this possible by using backwards & delay added so that it happens after .text-box*/
+	animation: moveUp 0.5s ease-out .75s backwards;
+}
+
+
+.btn:hover {
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+	transform: translateY(-3px);
+}
+
+.btn:active {
+	transform: translateY(-1px);
+}
+
+
+.btn-white{
+	background-color: white;
+	color: #777;
+}
+
+
+.btn::after{
+	border-radius: 13032002px;
+	content: "";
+	display: inline-block;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	transition: all .4s;
+	width: 100%;
+	z-index: -1;
+}
+
+.btn-white::after{
+	background-color: #fff;
+}
+
+.btn:hover::after{
+	transform: scaleX(1.5) scaleY(1.5);
+	opacity: 0;
+}
+
+
+/* Keyframes */
+
 
 @keyframes moveInLeft {
 	0%{
@@ -100,3 +173,55 @@ body {
 		transform: translateX(0);
 	}
 }
+
+@keyframes moveUp{
+	0%{
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	
+	100%{
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
+
+/*
+	Notes
+	----------------------------------------------------------------------------------------------
+	for *
+ 	Made margin and pading 0, these are default which browsers provide 
+ 	box-sizing: border-box, allows us to be consistent, avoid that overlap thing.
+ 	---
+ 	for body 
+ 	overall typography of body, then we can just change for components we want	
+ 	---
+ 	for .header
+ 	new thing - We can provide multiple bg-img by adding commas(,) 
+	bg-position, this is like I have fixed it at top here, 
+	now if browser screen will be resized then it will cropped from other than top, you got that
+	new thing - we learned about clip-path 
+	---
+	for .logo-box & text-box
+	positioned according to .header
+	---
+	for .primary-header
+	backface-visibility: hidden; - that little upwards movement of .headin-primary fixed
+	---
+	for box-shadow
+	figuring out ri8 values takes experience but as a trick remember this by 5-10-20 rule for box shadow 
+	just in case you don't know that translate values are in accordance to original state
+	---
+	for .btn::after
+	We made that water like thing on hover by using after 
+	didn't knew this, quickly saw mdn docs
+	no content with border radius same as btn and position too, height and with are 100%
+	left and top 0 makes it possible to align acc to parent wiz .btn
+	I avoid using z-index but this is small conponent so its ok
+	---
+	for .btn - this is css best practice
+	As we will use same btn config with diff colors
+
+*/
