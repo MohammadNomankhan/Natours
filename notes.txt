@@ -1,0 +1,57 @@
+
+	Notes
+	----------------------------------------------------------------------------------------------
+	for *
+ 	Made margin and pading 0, these are default which browsers provide 
+ 	box-sizing: border-box, allows us to be consistent, avoid that overlap thing.
+ 	---
+ 	for body 
+ 	overall typography of body, then we can just change for components we want	
+ 	---
+ 	for .header
+ 	new thing - We can provide multiple bg-img by adding commas(,) 
+	bg-position, this is like I have fixed it at top here, 
+	now if browser screen will be resized then it will cropped from other than top, you got that
+	new thing - we learned about clip-path 
+	---
+	for .logo-box & text-box
+	positioned according to .header
+	---
+	for .primary-header
+	backface-visibility: hidden; - that little upwards movement of .headin-primary fixed
+	---
+	for box-shadow
+	figuring out ri8 values takes experience but as a trick remember this by 5-10-20 rule for box shadow 
+	just in case you don't know that translate values are in accordance to original state
+	---
+	for .btn::after
+	We made that water like thing on hover by using after 
+	didn't knew this, quickly saw mdn docs
+	no content with border radius same as btn and position too, height and with are 100%
+	left and top 0 makes it possible to align acc to parent wiz .btn
+	I avoid using z-index but this is small conponent so its ok
+	---
+	for .btn - this is css best practice
+	As we will use same btn config with diff colors
+
+	---
+	
+	new thing - How CSS is parsed?
+
+	Cascaded -> value processing -> visual formating -> rendered website
+	1.Cascaded
+		about !important, specificity, last declaration override 
+	2. value processing
+		declared - cascaded - specified - relative to px - used - actual
+	3. visual formating
+		box sizing - how height and width become actual params 
+		block, inline, inline-block
+		float - relative, left, right etc and absolute, fixed
+
+	---
+	new thing - BEM Metholology
+	B - block :Standalone component
+	E - element :dependent on block
+	M - Modifier :some modifier like color, shape etc of a button for eg
+
+	---

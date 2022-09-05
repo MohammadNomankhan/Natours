@@ -49,18 +49,18 @@ body {
 }
 
 
-.logo-box{
+.header__logo-box{
 	left: 4rem;
 	position: absolute;
 	top: 4rem;
 }
 
-.logo{
+.header__logo{
 	height: 3.5rem;
 }
 
 
-.text-box{
+.header__text-box{
 	left: 50%;
 	position: absolute;
 	text-align: center;
@@ -75,7 +75,7 @@ body {
 	text-transform: uppercase;
 }
 
-.heading-main{
+.heading-primary--main{
 	display: block;
 	font-size: 6rem;
 	font-weight: 400;
@@ -84,7 +84,7 @@ body {
 	animation-duration: 1s;
 }
 
-.heading-sub{
+.heading-primary--sub{
 	display: block;
 	font-size: 2rem;
 	font-weight: 700;
@@ -104,11 +104,13 @@ body {
 	text-decoration: none;
 	text-transform: uppercase;
 	transition: all .2s;
-	/*How we made this possible by using backwards & delay added so that it happens after .text-box*/
-	animation: moveUp 0.5s ease-out .75s backwards;
 	font-size: 1.6rem;
 }
 
+.btn--animated{
+	/*How we made this possible by using backwards & delay added so that it happens after .text-box*/
+	animation: moveUp 0.5s ease-out .75s backwards;
+}
 
 .btn:hover {
 	box-shadow: 0px .5rem 1rem rgba(0, 0, 0, 0.2);
@@ -120,7 +122,7 @@ body {
 }
 
 
-.btn-white{
+.btn--white{
 	background-color: white;
 	color: #777;
 }
@@ -196,40 +198,4 @@ body {
 
 
 
-/*
-	Notes
-	----------------------------------------------------------------------------------------------
-	for *
- 	Made margin and pading 0, these are default which browsers provide 
- 	box-sizing: border-box, allows us to be consistent, avoid that overlap thing.
- 	---
- 	for body 
- 	overall typography of body, then we can just change for components we want	
- 	---
- 	for .header
- 	new thing - We can provide multiple bg-img by adding commas(,) 
-	bg-position, this is like I have fixed it at top here, 
-	now if browser screen will be resized then it will cropped from other than top, you got that
-	new thing - we learned about clip-path 
-	---
-	for .logo-box & text-box
-	positioned according to .header
-	---
-	for .primary-header
-	backface-visibility: hidden; - that little upwards movement of .headin-primary fixed
-	---
-	for box-shadow
-	figuring out ri8 values takes experience but as a trick remember this by 5-10-20 rule for box shadow 
-	just in case you don't know that translate values are in accordance to original state
-	---
-	for .btn::after
-	We made that water like thing on hover by using after 
-	didn't knew this, quickly saw mdn docs
-	no content with border radius same as btn and position too, height and with are 100%
-	left and top 0 makes it possible to align acc to parent wiz .btn
-	I avoid using z-index but this is small conponent so its ok
-	---
-	for .btn - this is css best practice
-	As we will use same btn config with diff colors
 
-*/
