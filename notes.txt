@@ -55,3 +55,28 @@
 	M - Modifier :some modifier like color, shape etc of a button for eg
 
 	---
+ 
+	Background-clip: text 
+	color: transparent
+	bg-img: graient or img
+	Very amazing prop, with help of this you can add bg but in clipped are
+
+	---
+	transform: skewX or Y or in both dir
+
+	in Y its like that standing y line pr 10 deg se tilt kro
+	same with X.
+	---
+	[class^="col-"] {
+	// css
+	} 
+
+	this ^ here means whatever class start with col-
+	apply this css
+	---
+	:not psueodo class is also amazing
+	---
+	calc function in css which is very powerfull 
+	---
+	how we adjusted that cliped are by -20rem margin using the concept that total is 95vh and that cliiped is at 75vh 
+	so 95-75 = 20
