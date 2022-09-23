@@ -80,3 +80,6 @@
 	---
 	how we adjusted that cliped are by -20rem margin using the concept that total is 95vh and that cliiped is at 75vh 
 	so 95-75 = 20
+	---
+	we are building muscle of naming variables as much we can so that we just have to change one var when we wanna have diff sizes
+	

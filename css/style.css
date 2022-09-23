@@ -93,6 +93,9 @@ body {
 .u-margin-bottom-medium {
   margin-bottom: 4rem; }
 
+.u-margin-zero-auto {
+  margin: 0 auto; }
+
 .btn:link, .btn:visited {
   /* this is just a trademark (haha), it my bdate*/
   border-radius: 10rem;
@@ -261,6 +264,51 @@ body {
     font-size: 6rem;
     font-weight: 100; }
 
+.story {
+  padding: 6rem;
+  padding-left: 9rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin: 0 auto;
+  width: 75%;
+  border-radius: 3px;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  font-size: 1.6rem;
+  transform: skewX(-12deg); }
+  .story > * {
+    transform: skewX(12deg); }
+  .story__shape {
+    height: 15rem;
+    width: 15rem;
+    background-color: red;
+    float: left;
+    shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    translate: -3rem;
+    position: relative; }
+  .story__img {
+    height: 100%;
+    translate: -4rem;
+    scale: 1.4;
+    transition: all .5s; }
+  .story__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.7rem;
+    text-align: center;
+    transform: translate(-50%, 20%);
+    opacity: 0;
+    backface-visibility: hidden;
+    transition: all .5s; }
+  .story:hover .story__caption {
+    transform: translate(-50%, -50%);
+    opacity: 1; }
+  .story:hover .story__img {
+    scale: 1.1;
+    filter: blur(3px) brightness(80%); }
+
 .composition {
   position: relative; }
   .composition__photo {
@@ -305,6 +353,19 @@ body {
     color: transparent; }
   .feature-box:hover {
     transform: translateY(-1.5rem) scale(1.03); }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .15; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
 
 .header {
   background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
@@ -372,6 +433,10 @@ body {
   padding: 25rem 0 15rem 0;
   background-color: #f7f7f7;
   margin-top: -11rem; }
+
+.section-stories {
+  position: relative;
+  padding: 15rem 0; }
 
 /*
 COLORS:
