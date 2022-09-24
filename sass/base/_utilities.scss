@@ -25,3 +25,30 @@
 .u-margin-top-huge {
 	margin-top: 10rem !important;
 }
+
+// bgs for easy, hard and medium of card.
+
+.u-add-gradient-bg--1 {
+	background-image: linear-gradient(to right bottom,$color-secondary-light,$color-secondary-dark);
+	background-clip: text;
+	color: transparent;
+
+}
+
+.u-add-gradient-bg--2 {
+	background-image: linear-gradient(to right bottom,$color-primary-light,$color-primary-dark);
+	background-clip: text;
+	color: transparent;
+
+}
+
+.u-add-gradient-bg--3 {
+	background-image: linear-gradient(to right bottom,$color-tertiary-light,$color-tertiary-dark);
+	background-clip: text;
+	color: transparent;
+
+}
+
+.u-bold-text {
+	font-weight: 700;
+}
