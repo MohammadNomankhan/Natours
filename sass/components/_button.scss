@@ -1,5 +1,5 @@
 .btn{
-
+	&,
 	&:link,
 	&:visited{
 		/* this is just a trademark (haha), it my bdate*/
@@ -13,6 +13,10 @@
 		font-size: 1.6rem;
 		user-select: none;
 
+		//for button only
+		border: none; 
+		cursor: pointer;
+
 	}
 
 	&--animated{
@@ -25,8 +29,11 @@
 		transform: translateY(-.3rem);
 	}
 
-	&:active {
+	&:active,
+	&:focus {
+		outline: none;
 		transform: translateY(-.1rem);
+		box-shadow: 0 .5rem 1rem rgba($color-black, .2);
 	}
 
 
