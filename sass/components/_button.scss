@@ -2,15 +2,19 @@
 	&,
 	&:link,
 	&:visited{
-		border-radius: 10rem;
-		display: inline-block;
-		padding: 1.5rem 4rem;
-		position: relative;
+		// make a tag inline-block so that we can add margins and paddings.
 		text-decoration: none;
+		
+		display: inline-block;
+		font-size: 1.6rem;
+		padding: 1.5rem 4rem;
+		border-radius: 10rem;
+
 		text-transform: uppercase;
 		transition: all .2s;
-		font-size: 1.6rem;
+
 		user-select: none;
+		position: relative;
 
 		//for button only
 		border: none; 
@@ -24,7 +28,7 @@
 	}
 
 	&:hover {
-		box-shadow: 0px .5rem 1rem rgba(0, 0, 0, 0.2);
+		box-shadow: 0px .5rem 1rem rgba($color-black, .2);
 		transform: translateY(-.3rem);
 	}
 
@@ -59,15 +63,17 @@
 
 
 	&::after{
-		border-radius: 10rem;
 		content: "";
 		display: inline-block;
 		height: 100%;
-		left: 0;
-		position: absolute;
-		top: 0;
-		transition: all .4s;
 		width: 100%;
+		border-radius: 10rem;
+
+		position: absolute;
+		left: 0;
+		top: 0;
+		
+		transition: all .4s;
 		z-index: -1;
 	}
 

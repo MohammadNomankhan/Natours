@@ -15,6 +15,18 @@
 		right: 6rem;
 		z-index: 2000;
 
+		
+
+		@include respond(tab-port){
+			top: 2.5rem;
+			right: 4rem;
+		}
+
+		@include respond(phone){
+			top: 3rem;
+			right: 3rem;
+		}
+
 		text-align: center;
 		cursor: pointer;
 
@@ -30,9 +42,18 @@
 		top: 6.5rem;
 		right: 6.5rem;
 		z-index: 1000;
-
-		// scale: 80;
 		transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
+		
+		@include respond(tab-port){
+			top: 2.5rem;
+			right: 4.5rem;
+		}
+
+		@include respond(phone){
+			top: 3.5rem;
+			right: 3.5rem;
+		}
+
 	}
 
 	&__nav {
